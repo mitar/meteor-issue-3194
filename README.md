@@ -4,6 +4,8 @@ Meteor Issue: Subscription not ready in onReady callback
 In Deps.autorun, when using a session variable to modify a subscription, the onReady() callback
 is called when data is not ready yet. Using setTimeout(0) solves the problem.
 
+Tested on Meteor 0.8.3 and WINDOWS-PREVIEW@0.0.8
+
 <h4>How to reproduce:</h4>
 
 1. $ git clone https://github.com/steph643/meteor-issue-3194/

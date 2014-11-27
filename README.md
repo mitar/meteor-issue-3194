@@ -6,8 +6,8 @@ is called when data is not ready yet. Using setTimeout(0) solves the problem.
 
 <h4>How to reproduce:</h4>
 
-1. $ git clone https://github.com/steph643/iron-router-issue-678/
-2. Go to folder iron-router-issue-678 and run meteor
+1. $ git clone https://github.com/steph643/meteor-issue-3194/
+2. Go to folder meteor-issue-3194 and run meteor
 3. Launch the browser on http://localhost:3000/page1
 4. Click on 'Toggle Subscribe'
 

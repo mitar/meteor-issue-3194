@@ -1,10 +1,10 @@
 # jonjamz:forms
 
-A minimalist Meteor package that allows creating reusable forms and form components.
-Support form reactivity, validation and submission (including complex workflows).
+A minimalist Meteor package that allows creating reusable form components, with support for reactivity, validation and submission (including complex workflows).
+
 Compatible with Bootstrap or any other UI framework.
 
-This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) for form field validation when required.
+This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) for form field validation.
 
 
 ## Comparison with aldeed:autoform
@@ -19,34 +19,57 @@ Although [aldeed:autoform](https://github.com/aldeed/meteor-autoform) and jonjam
 $ meteor add jonjamz:forms
 ```
 
+## Basic Usage
 
-## Usage
+Create a form element (see next chapter for a list of available helpers) :
 
-It's recommended to set up helpers to run on both server and client. This way your helpers can be accessed both server side and client side.
-
-Some simple helpers:
-
-```javascript
-Books = new Mongo.Collection('books');
-Authors = new Mongo.Collection('authors');
-
-Books.helpers({
-  author: function() {
-    return Authors.findOne(this.authorId);
-  }
-});
-
-Authors.helpers({
-  fullName: function() {
-    return this.firstName + ' ' + this.lastName;
-  },
+```html
+Template.books.helpers({
   books: function() {
-    return Books.find({ authorId: this._id });
+    return Books.find();
   }
 });
 ```
 
-### Example use within a template
+Create a form:
+
+```html
+Template.books.helpers({
+  books: function() {
+    return Books.find();
+  }
+});
+```
+
+Declare the corresponding javascript objects:
+
+```javascript
+Template.books.helpers({
+  books: function() {
+    return Books.find();
+  }
+});
+```
+
+Use the form:
+
+```html
+Template.books.helpers({
+  books: function() {
+    return Books.find();
+  }
+});
+```
+
+```javascript
+Template.books.helpers({
+  books: function() {
+    return Books.find();
+  }
+});
+```
+
+### Complex Workflow
 
 Our relationships are resolved by the collection helper, avoiding unnecessary template helpers. So we can simply write:
 

@@ -1,12 +1,21 @@
-# Meteor Collection Helpers
+# jonjamz:forms
 
-Collection helpers automatically sets up a transformation on your collections allowing for simple models, with an interface similar to template helpers.
+A small Meteor package that allows creating reusable forms and form components.
+Support form reactivity, validation and submission (including complex workflows).
+Compatible with Bootstrap or any other UI framework.
+
+
 
 ## Installation
 
 ```sh
 $ meteor add dburles:collection-helpers
 ```
+
+## Difference with aldeed:simple-schema
+
+jonjamz:forms is based on aldeed:simple-schema for schema declaration.
+
 
 ## Usage
 

@@ -21,14 +21,27 @@ $ meteor add jonjamz:forms
 
 ## Basic Usage
 
-Create a form element (see next chapter for a list of available helpers) :
+Create a form element (minimal version):
 
 ```html
-Template.books.helpers({
-  books: function() {
-    return Books.find();
-  }
-});
+<template name="myInput">
+   <input class="reactive-element" value="{{value}}">
+   <p>{{#unless valid}}{{errorMessage}}{{/unless}}</p>
+</template>
+```
+
+The same element could look like this if you use Bootstrap:
+
+```html
+<template name="myInput">
+    <div class="reactive-input-container">
+        <div class="form-group  {{#unless valid}}has-error{{/unless}}">
+            <label class="control-label">{{label}}</label>
+            <input class="form-control reactive-element" value="{{value}}">
+            <p class="help-block">{{#unless valid}}{{errorMessage}}{{/unless}}</p>
+        </div>
+    </div>
+</template>
 ```
 
 Create a form:

@@ -1,20 +1,23 @@
 # jonjamz:forms
 
-A small Meteor package that allows creating reusable forms and form components.
+A minimalist Meteor package that allows creating reusable forms and form components.
 Support form reactivity, validation and submission (including complex workflows).
 Compatible with Bootstrap or any other UI framework.
 
+This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) for form field validation when required.
 
+
+## Comparison with aldeed:autoform
+
+Although [aldeed:autoform](https://github.com/aldeed/meteor-autoform) and jonjamz:forms use aldeed:simple-schema, they have different purposes:
+- [aldeed:autoform](https://github.com/aldeed/meteor-autoform) main purpose is automatic generation of insert and update forms for your collections. It includes many options and is tightly integrated with aldeed:simple-schema and [aldeed:collection2](https://github.com/aldeed/meteor-collection2).
+- [jonjamz:forms](https://github.com/meteortemplates/forms) only provides a thin framework to create reusable forms components by yourself.
 
 ## Installation
 
 ```sh
-$ meteor add dburles:collection-helpers
+$ meteor add jonjamz:forms
 ```
-
-## Difference with aldeed:simple-schema
-
-jonjamz:forms is based on aldeed:simple-schema for schema declaration.
 
 
 ## Usage

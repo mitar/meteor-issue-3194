@@ -85,13 +85,13 @@ Template.myForm.helpers({
 });
 ```
 
-## Example of complex workflow
+## Example Of Complex Workflow
 
 [View the Live Example](http://forms-example.meteor.com/)
 
 Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
 
-## Basic API Reference
+## Basic API
 
 ...
 

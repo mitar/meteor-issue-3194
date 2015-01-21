@@ -1,17 +1,17 @@
 # jonjamz:forms
 
-A minimalist Meteor package that allows creating reusable form components, with support for reactivity, validation and submission (including complex workflows).
+A minimalist Meteor package for creating reusable forms and form elements, with support for reactivity, validation and submission (including complex workflows).
 
-Compatible with Bootstrap or any other UI framework.
+Compatible with Bootstrap and other UI frameworks.
 
-This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) for form field validation.
+This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) for field validation.
 
 
 ## Comparison with aldeed:autoform
 
-Although [aldeed:autoform](https://github.com/aldeed/meteor-autoform) and jonjamz:forms use aldeed:simple-schema, they have different purposes:
-- [aldeed:autoform](https://github.com/aldeed/meteor-autoform) main purpose is automatic generation of insert and update forms for your collections. It includes many options and is tightly integrated with aldeed:simple-schema and [aldeed:collection2](https://github.com/aldeed/meteor-collection2).
-- [jonjamz:forms](https://github.com/meteortemplates/forms) only provides a thin framework to create reusable forms components by yourself.
+[aldeed:autoform](https://github.com/aldeed/meteor-autoform) and jonjamz:forms serves different purposes:
+- **aldeed:autoform** main purpose is automatic generation of insert and update forms for your collections. It is a very rich package, tightly integrated with aldeed:simple-schema and aldeed:collection2.
+- **jonjamz:forms** only provides a thin framework for reusable forms, form elements and form workflows.
 
 ## Installation
 
@@ -21,7 +21,7 @@ $ meteor add jonjamz:forms
 
 ## Basic Usage
 
-Create a form element (minimal version):
+Create a form element:
 
 ```html
 <template name="myInput">
@@ -30,57 +30,62 @@ Create a form element (minimal version):
 </template>
 ```
 
-The same element could look like this if you use Bootstrap:
+Or a richer version, using Bootstrap:
 
 ```html
 <template name="myInput">
-    <div class="reactive-input-container">
-        <div class="form-group  {{#unless valid}}has-error{{/unless}}">
-            <label class="control-label">{{label}}</label>
-            <input class="form-control reactive-element" value="{{value}}">
-            <p class="help-block">{{#unless valid}}{{errorMessage}}{{/unless}}</p>
-        </div>
+    <div class="form-group  {{#unless valid}}has-error{{/unless}}">
+        <label class="control-label">{{label}}</label>
+        <input class="form-control reactive-element" value="{{value}}">
+        <p class="help-block">{{#unless valid}}{{errorMessage}}{{/unless}}</p>
     </div>
 </template>
 ```
 
+Register your form element:
+```javascript
+ReactiveForms.registerElement({
+	template: 'myInput',
+	validationEvent: 'keyup'
+});
+```
+
 Create a form:
-
 ```html
-Template.books.helpers({
-  books: function() {
-    return Books.find();
-  }
-});
-```
-
-Declare the corresponding javascript objects:
-
-```javascript
-Template.books.helpers({
-  books: function() {
-    return Books.find();
-  }
-});
-```
-
-Use the form:
-
-```html
-Template.books.helpers({
-  books: function() {
-    return Books.find();
-  }
-});
+<template name="myForm">
+    {{#simpleFormContainer schema=getShema data=currentPost action=getAction}}
+        {{>myInput field="title"}}
+        {{>myInput field="date"}}
+        {{>myInput field="body"}}
+    {{/simpleFormContainer}}
+</template>
 ```
 
 ```javascript
-Template.books.helpers({
-  books: function() {
-    return Books.find();
-  }
+Template.myForm.helpers({
+
+	getSchema: function () {
+		// Example 1: build your schema right here (see package aldeed:simple-schema)
+		return new SimpleSchema({
+			title: { type: String }, 
+			date:  { type: Date }, 
+			body:  { type: String } });
+	
+		// Example 2: return the schema used in a collection2 (see package aldeed:collection2)
+		return Posts.simpleSchema();
+	},
+
+	getAction: function () {
+		return function(els, callbacks, changed) {
+            if (!_.isEmpty(changed))
+				Posts.update(this.currentPost._id, changed);
+		}
+	}	
 });
 ```
+
+
+
 
 ### Complex Workflow
 

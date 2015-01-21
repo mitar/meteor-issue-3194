@@ -99,7 +99,7 @@ Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexibl
 
 ...
 
-## Advanced API: create your own form blocks
+## Advanced API: Create Your Own Form Blocks
 
 The advanced API must be used when you want to reuse the same submission logic with different forms.
 

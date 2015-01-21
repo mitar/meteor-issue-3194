@@ -53,11 +53,11 @@ JonjamzForms.registerElement({
 Create a form:
 ```html
 <template name="myForm">
-    {{#simpleFormContainer schema=getShema data=currentPost action=getAction}}
+    {{#defaultFormBlock schema=getShema data=currentPost action=getAction}}
         {{>myInput field="title"}}
         {{>myInput field="date"}}
         {{>myInput field="body"}}
-    {{/simpleFormContainer}}
+    {{/defaultFormBlock}}
 </template>
 ```
 
@@ -85,20 +85,28 @@ Template.myForm.helpers({
 });
 ```
 
-### Example of complex workflow
+## Example of complex workflow
 
-[View the Live Example](http://forms-example.meteor.com/)
+Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is: [View the Live Example](http://forms-example.meteor.com/)
 
-Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is. 
-
-### API reference
+## API Reference
 
 ...
 
-### Advanced usage: isolate your workflow from your forms
+... here goes half of the existing doc, with a bit of reorganization ...
 
 ...
 
-### License
+## Advances Technic: develop your own form blocks
+
+This advances technics is when you want to separate your forms from the workflow logic. Use cases are bla bla 
+
+...
+
+... here goes the other half of the existing doc, with a bit of reorganization ...
+
+...
+
+## License
 
 MIT or whatever

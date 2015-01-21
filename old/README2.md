@@ -30,11 +30,11 @@ Create a form element:
 </template>
 ```
 
-Or a richer version, using Bootstrap:
+Or a richer version, using Bootstrap for example:
 
 ```html
 <template name="myInput">
-    <div class="form-group  {{#unless valid}}has-error{{/unless}}">
+    <div class="form-group {{#unless valid}}has-error{{/unless}}">
         <label class="control-label">{{label}}</label>
         <input class="form-control reactive-element" value="{{value}}">
         <p class="help-block">{{#unless valid}}{{errorMessage}}{{/unless}}</p>
@@ -44,7 +44,7 @@ Or a richer version, using Bootstrap:
 
 Register your form element:
 ```javascript
-ReactiveForms.registerElement({
+JonjamzForms.registerElement({
 	template: 'myInput',
 	validationEvent: 'keyup'
 });
@@ -84,52 +84,20 @@ Template.myForm.helpers({
 });
 ```
 
+### Example of complex workflow
 
+[View the Live Example](http://forms-example.meteor.com/)
 
+Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is. 
 
-### Complex Workflow
+### API reference
 
-Our relationships are resolved by the collection helper, avoiding unnecessary template helpers. So we can simply write:
+...
 
-```javascript
-Template.books.helpers({
-  books: function() {
-    return Books.find();
-  }
-});
-```
+### Advanced usage: isolate your workflow from your forms
 
-...with the corresponding template:
-
-```html
-<template name="books">
-  <ul>
-  {{#each books}}
-    <li>{{name}} by {{author.fullName}}</li>
-  {{/each}}
-  </ul>
-</template>
-```
-
-### Use outside of templates
-
-You can of course access helpers outside of your templates:
-
-```javascript
-Books.findOne().author().firstName; // Charles
-Books.findOne().author().fullName(); // Charles Darwin
-```
-
-## Meteor.users
-
-You can also apply helpers to the Meteor.users collection
-
-```javascript
-Meteor.users.helpers({
-  // ...
-});
-```
+...
 
 ### License
 
-MIT
+MIT or whatever

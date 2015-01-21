@@ -1,7 +1,5 @@
 # jonjamz:forms
 
-![](/http://www.doublepgradinginc.com/SiteAssets/contact-us/contact-form-generator.png)
-
 A minimalist Meteor package for creating reusable forms and form elements, with support for reactivity, validation and submission (including complex workflows).
 
 Compatible with Bootstrap and other UI frameworks.

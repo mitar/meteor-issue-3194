@@ -67,9 +67,9 @@ Template.myForm.helpers({
 	getSchema: function () {
 		// Example 1: build your schema right here (see package aldeed:simple-schema)
 		return new SimpleSchema({
-			title: { type: String }, 
+			title: { type: String, max: 5 }, 
 			date:  { type: Date }, 
-			body:  { type: String } });
+			body:  { type: String, max: 100, optional: true } });
 	
 		// Example 2: return the schema used in a collection2 (see package aldeed:collection2)
 		return Posts.simpleSchema();

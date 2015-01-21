@@ -76,9 +76,10 @@ Template.myForm.helpers({
 	},
 
 	getAction: function () {
+		var postId = this.currentPost._id;    
 		return function(els, callbacks, changed) {
             if (!_.isEmpty(changed))
-				Posts.update(this.currentPost._id, changed);
+				Posts.update(postId, changed);
 		}
 	}	
 });

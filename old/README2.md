@@ -91,7 +91,7 @@ Template.myForm.helpers({
 
 Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
 
-## API Reference
+## Basic API Reference
 
 ...
 
@@ -99,9 +99,9 @@ Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexibl
 
 ...
 
-## Advances Technic: develop your own form blocks
+## Advanced API: create your own form blocks
 
-This advances technics is usefull when you want to separate your forms from the workflow logic. Use cases are: bla bla 
+The advanced API must be used when you want to reuse the same submission logic with different forms.
 
 ...
 

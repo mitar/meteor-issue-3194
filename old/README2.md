@@ -1,5 +1,7 @@
 # jonjamz:forms
 
+![](/http://www.doublepgradinginc.com/SiteAssets/contact-us/contact-form-generator.png)
+
 A minimalist Meteor package for creating reusable forms and form elements, with support for reactivity, validation and submission (including complex workflows).
 
 Compatible with Bootstrap and other UI frameworks.
@@ -7,7 +9,7 @@ Compatible with Bootstrap and other UI frameworks.
 This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) for field validation.
 
 
-### Comparison with aldeed:autoform
+## Comparison with aldeed:autoform
 
 [aldeed:autoform](https://github.com/aldeed/meteor-autoform) and jonjamz:forms serves different purposes:
 - **aldeed:autoform** main purpose is automatic generation of insert and update forms for your collections. It is a very rich package, tightly integrated with aldeed:simple-schema and aldeed:collection2.

@@ -87,7 +87,9 @@ Template.myForm.helpers({
 
 ## Example of complex workflow
 
-Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is: [View the Live Example](http://forms-example.meteor.com/)
+[View the Live Example](http://forms-example.meteor.com/)
+
+Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
 
 ## API Reference
 
@@ -99,7 +101,7 @@ Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexibl
 
 ## Advances Technic: develop your own form blocks
 
-This advances technics is when you want to separate your forms from the workflow logic. Use cases are bla bla 
+This advances technics is usefull when you want to separate your forms from the workflow logic. Use cases are: bla bla 
 
 ...
 

@@ -163,7 +163,7 @@ JonjamzForms.registerModel({
 Create your form:
 ```html
 <template name="updateNews">
-    {{#bootstrapModal modalId="updateANews" modalTitle="Update a News" schema=getShema data=currentNews action=getAction}}
+    {{#bootstrapModal modalId="updateNews" modalTitle="Update a News" schema=getShema data=currentNews action=getAction}}
         {{>myInput field="title"}}
         {{>myInput field="body"}}
     {{/bootstrapModal}}
@@ -173,7 +173,7 @@ Create your form:
 Use your form:
 ```html
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateANews">Update</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateNews">Update</button>
 
 <!-- Modal -->
 {{>updateNews currentNews=currentNews}}

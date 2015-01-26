@@ -101,7 +101,7 @@ JonjamzForms.registerElement({
 Create your form:
 ```html
 <template name="updateNews">
-    <h4>Create/Update a News</h4>
+    <h4>Update a News</h4>
     {{#basicFormModel schema=getShema data=currentNews action=getAction}}
         {{>myInput field="title"}}
         {{>myInput field="body"}}
@@ -132,8 +132,6 @@ Template.newsForm.helpers({
 
 ### Advanced Usage: Define Your Own Form Model
 
-Untile now, we have used the `basicFormModel` predefined form model, but we will now define our own.
-
 Create a form model:
 ```html
 <!-- 
@@ -162,6 +160,7 @@ Create a form model:
     </div><!-- /.modal -->
 </template>
 ```
+Notice that the form model must contain the `UI.contentBlock` line with the proper fields, judt copy it as it is.
 
 Register your form model:
 ```javascript
@@ -171,8 +170,9 @@ JonjamzForms.registerModel({
 });
 ```
 
-
-
+Use your modal:
+```javascript
+```
 
 ### Expert Usage: Complex Workflows
 
@@ -182,16 +182,27 @@ Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexibl
 
 
 
-
-
 ## API Reference
 
-```
-
 ...
-
-... here goes the other half of the existing doc, with a bit of reorganization ...
-
+...
+...
+...
+...
+...
+...
+...
+...
+... here goes the existing doc, with a bit of revamping ...
+...
+...
+...
+...
+...
+...
+...
+...
+...
 ...
 
 

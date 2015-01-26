@@ -183,9 +183,7 @@ Create your form:
 Use your form:
 ```html
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateANews">
-    Update The News
-</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateANews">Update</button>
 
 <!-- Modal -->
 {{>updateNews currentNews=currentNews}}

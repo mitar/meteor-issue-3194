@@ -28,7 +28,7 @@ $ meteor add jonjamz:forms
 	- [Example Of Complex Workflow](#)
 - [License](#)
 
-
+<br />
 
 ## Examples
 
@@ -195,7 +195,7 @@ Use your form:
 
 Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
 
-
+<br />
 
 ## API Reference
 
@@ -220,6 +220,7 @@ Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexibl
 ...
 ...
 
+<br />
 
 ## License
 

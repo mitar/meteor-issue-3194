@@ -18,7 +18,7 @@ This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple
 $ meteor add jonjamz:forms
 ```
 
-####Table of Contents
+####Table of Contents<sub><sup>[DocToc](http://doctoc.herokuapp.com/)</sup></sub>
 
 - [Examples](#)
 	- [Check That It Works](#)

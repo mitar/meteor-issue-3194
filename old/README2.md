@@ -21,9 +21,6 @@ $ meteor add jonjamz:forms
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [jonjamz:forms](#)
-			- [Comparison with aldeed:autoform](#)
-			- [Installation](#)
-			- [Table of Contents](#)
 	- [Examples](#)
 		- [Check That It Works](#)
 		- [Basic Usage: Define Your Own Form Elements](#)

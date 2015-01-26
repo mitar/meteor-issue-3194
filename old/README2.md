@@ -23,7 +23,7 @@ $ meteor add jonjamz:forms
 - [Examples](#)
 	- [Check That It Works](#)
 	- [Basic Usage: Define Your Own Form Elements](#)
-	- [Advanced USage: Create Your Own Form Models](#)
+	- [Advanced Usage: Create Your Own Form Models](#)
 - [API Reference](#)
 	- [Example Of Complex Workflow](#)
 - [License](#)
@@ -43,7 +43,7 @@ jonjamz:forms comes with two predefined basic components, `basicFormModel` and  
         {{>basicInput field="title"}}
         {{>basicInput field="body"}}
         <button type="submit" disabled="{{#if formHelpers.invalidCount}}disabled{{/if}}">Submit</button>
-    {{/defaultFormBlock}}
+    {{/basicFormModel}}
 </template>
 ```
 ```javascript
@@ -66,9 +66,8 @@ Template.createNews.helpers({
 	}	
 });
 ```
-But jonjamz:forms is not a component library. We will now see how you can create your own components.
 
-### Basic Usage: Define Your Own Form Elements
+### Basic Usage: Define Your Own Form Element
 
 Create a form element:
 
@@ -99,36 +98,31 @@ JonjamzForms.registerElement({
 });
 ```
 
-Create a form:
+Create your form:
 ```html
-<template name="myForm">
-    {{#defaultFormBlock schema=getShema data=currentPost action=getAction}}
+<template name="updateNews">
+    <h4>Create/Update a News</h4>
+    {{#basicFormModel schema=getShema data=currentNews action=getAction}}
         {{>myInput field="title"}}
-        {{>myInput field="date"}}
         {{>myInput field="body"}}
-    {{/defaultFormBlock}}
+        <button type="submit" disabled="{{#if formHelpers.invalidCount}}disabled{{/if}}">Submit</button>
+    {{/basicFormModel}}
 </template>
 ```
 
 ```javascript
-Template.myForm.helpers({
+Template.newsForm.helpers({
 
 	getSchema: function () {
-		// Example 1: build your schema right here (see package aldeed:simple-schema)
-		return new SimpleSchema({
-			title: { type: String, max: 5 }, 
-			date:  { type: Date }, 
-			body:  { type: String, max: 100, optional: true } });
-	
-		// Example 2: return the schema used in a collection2 (see package aldeed:collection2)
-		return Posts.simpleSchema();
+		// Return the schema used in a collection2 (see package aldeed:collection2)
+		return News.simpleSchema();
 	},
 
 	getAction: function () {
-		var postId = this.currentPost._id;    
+		var newsId = this.currentNews._id;    
 		return function(els, callbacks, changed) {
             if (!_.isEmpty(changed))
-				Posts.update(postId, changed);
+				News.update(newsId, changed);
             callbacks.success();
 		}
 	}	
@@ -136,26 +130,69 @@ Template.myForm.helpers({
 ```
 
 
-### Advanced USage: Create Your Own Form Models
+### Advanced Usage: Define Your Own Form Model
 
-The advanced API must be used when you want to reuse the same submission logic with different forms.
+Untile now, we have used the `basicFormModel` predefined form model, but we will now define our own.
 
-...
+Create a form model:
+```html
+<!-- 
+	Use this template like this:
+		{{#bootstrapModal modalTitle=... schema=... data=... action=...}}
+-->
+<template name="bootstrapModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">{{modalTitle}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        {{> UI.contentBlock data=data formHelpers=formHelpers}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" disabled="{{#if invalidCount}}disabled{{/if}}">Save</button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</template>
+```
 
-... here goes the other half of the existing doc, with a bit of reorganization ...
+Register your form model:
+```javascript
+JonjamzForms.registerModel({
+    template: 'bootstrapModal',
+    submitType: 'normal'
+});
+```
 
-...
+
+
+
+### Expert Usage: Complex Workflows
+
+[View the Live Example](http://forms-example.meteor.com/)
+
+Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
+
 
 
 
 
 ## API Reference
 
-### Example Of Complex Workflow
+```
 
-[View the Live Example](http://forms-example.meteor.com/)
+...
 
-Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
+... here goes the other half of the existing doc, with a bit of reorganization ...
+
+...
 
 
 ## License

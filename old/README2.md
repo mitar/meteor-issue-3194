@@ -18,16 +18,6 @@ This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple
 $ meteor add jonjamz:forms
 ```
 
-####Table of Contents <sub><sup>([DocToc](http://doctoc.herokuapp.com/))</sup></sub>
-
-- [Examples](#)
-	- [Check That It Works](#)
-	- [Basic Usage: Define Your Own Form Elements](#)
-	- [Advanced Usage: Create Your Own Form Models](#)
-- [API Reference](#)
-	- [Example Of Complex Workflow](#)
-- [License](#)
-
 <br />
 
 ## Examples
@@ -189,7 +179,7 @@ Use your form:
 {{>updateNews currentNews=currentNews}}
 ```
 
-### Expert Usage: Implement a Complex Workflows in a Form model
+### Expert Usage: Complex Workflow
 
 [View the Live Example](http://forms-example.meteor.com/)
 

@@ -20,14 +20,13 @@ $ meteor add jonjamz:forms
 
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [jonjamz:forms](#)
-	- [Examples](#)
-		- [Check That It Works](#)
-		- [Basic Usage: Define Your Own Form Elements](#)
-		- [Advanced USage: Create Your Own Form Models](#)
-	- [API Reference](#)
-		- [Example Of Complex Workflow](#)
-	- [License](#)
+- [Examples](#)
+- [Check That It Works](#)
+- [Basic Usage: Define Your Own Form Elements](#)
+- [Advanced USage: Create Your Own Form Models](#)
+- [API Reference](#)
+- [Example Of Complex Workflow](#)
+- [License](#)
 
 ## Examples
 

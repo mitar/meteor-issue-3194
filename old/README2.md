@@ -17,7 +17,18 @@ This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple
 ```sh
 $ meteor add jonjamz:forms
 ```
-#### Table of Contents
+
+#### Table of Contents   
+*generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+	- [Examples](#)
+		- [Check That It Works](#)
+		- [Basic Usage: Define Your Own Form Elements](#)
+		- [Advanced USage: Create Your Own Form Models](#)
+	- [API Reference](#)
+		- [Example Of Complex Workflow](#)
+	- [License](#)
+
 
 ## Examples
 

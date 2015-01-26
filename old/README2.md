@@ -12,7 +12,10 @@ This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple
 ```sh
 $ meteor add jonjamz:forms
 ```
-  
+                                                                     
+                                                                     
+                                                                     
+                                                                     
   
 
 #### Comparison with aldeed:autoform

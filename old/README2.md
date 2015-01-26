@@ -32,7 +32,7 @@ $ meteor add jonjamz:forms
 
 ## Examples
 
-### Check That It Works
+### Minimal Usage: Check That It Works
 
 jonjamz:forms comes with two predefined basic components, `basicFormModel` and  `basicInput`, so that you  can quickly see the package in action:
 
@@ -67,7 +67,7 @@ Template.createNews.helpers({
 });
 ```
 
-### Basic Usage: Define Your Own Form Element
+### Simple Usage: Define Your Own Form Element
 
 Create a form element:
 
@@ -189,7 +189,7 @@ Use your form:
 {{>updateNews currentNews=currentNews}}
 ```
 
-### Expert Usage: Complex Workflows
+### Expert Usage: Implement a Complex Workflows in a Form model
 
 [View the Live Example](http://forms-example.meteor.com/)
 

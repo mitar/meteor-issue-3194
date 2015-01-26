@@ -7,19 +7,62 @@ Compatible with Bootstrap and other UI frameworks.
 This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) for field validation.
 
 
-## Comparison with aldeed:autoform
+### Comparison with aldeed:autoform
 
 [aldeed:autoform](https://github.com/aldeed/meteor-autoform) and jonjamz:forms serves different purposes:
 - **aldeed:autoform** automatically generates insert and update forms for your collections. It is a large and rich package, tightly integrated with aldeed:simple-schema and aldeed:collection2.
 - **jonjamz:forms** only provides a thin framework for building reusable forms, form elements and form workflows.
 
-## Installation
+### Installation
 
 ```sh
 $ meteor add jonjamz:forms
 ```
 
-## Basic Usage
+### License
+
+MIT or whatever
+
+
+## Introduction
+
+### Check That It Works
+
+jonjamz:forms comes with two predefined basic components, `basicFormModel` and  `basicInput`, so that you  can quickly see the package in action:
+
+```html
+<template name="createNews">
+    <h4>Create a News</h4>
+    {{#basicFormModel schema=getShema action=getAction}}
+        {{>basicInput field="title"}}
+        {{>basicInput field="body"}}
+        <button type="submit" disabled="{{#if formHelpers.invalidCount}}disabled{{/if}}">Submit</button>
+    {{/defaultFormBlock}}
+</template>
+```
+```javascript
+Template.createNews.helpers({
+
+	getSchema: function() {
+		return new SimpleSchema({
+			title: { type: String, max: 3 }, 
+			body:  { type: String, max: 10, optional: true } });
+	},
+
+	getAction: function() {
+        return function(els, callbacks, changed) {            
+            console.log('---------  News Submitted!  ---------');
+            console.log('Fields:');
+            console.log(this);
+            callbacks.success();
+            }
+		}
+	}	
+});
+```
+But jonjamz:forms is not a component library. We will now see how you can create your own components.
+
+### Basic Usage: Define Your Own Form Elements
 
 Create a form element:
 
@@ -80,26 +123,14 @@ Template.myForm.helpers({
 		return function(els, callbacks, changed) {
             if (!_.isEmpty(changed))
 				Posts.update(postId, changed);
+            callbacks.success();
 		}
 	}	
 });
 ```
 
-## Example Of Complex Workflow
 
-[View the Live Example](http://forms-example.meteor.com/)
-
-Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
-
-## Basic API
-
-...
-
-... here goes half of the existing doc, with a bit of reorganization ...
-
-...
-
-## Advanced API: Create Your Own Form Blocks
+## Advanced USage: Create Your Own Form Models
 
 The advanced API must be used when you want to reuse the same submission logic with different forms.
 
@@ -109,6 +140,12 @@ The advanced API must be used when you want to reuse the same submission logic w
 
 ...
 
-## License
+## API Reference
 
-MIT or whatever
+### Example Of Complex Workflow
+
+[View the Live Example](http://forms-example.meteor.com/)
+
+Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
+
+

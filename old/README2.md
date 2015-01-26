@@ -7,21 +7,17 @@ Compatible with Bootstrap and other UI frameworks.
 This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) for field validation.
 
 
-### Comparison with aldeed:autoform
+#### Comparison with aldeed:autoform
 
 [aldeed:autoform](https://github.com/aldeed/meteor-autoform) and jonjamz:forms serves different purposes:
 - **aldeed:autoform** automatically generates insert and update forms for your collections. It is a large and rich package, tightly integrated with aldeed:simple-schema and aldeed:collection2.
 - **jonjamz:forms** only provides a thin framework for building reusable forms, form elements and form workflows.
 
-### Installation
+#### Installation
 
 ```sh
 $ meteor add jonjamz:forms
 ```
-
-### License
-
-MIT or whatever
 
 
 ## Introduction
@@ -149,3 +145,6 @@ The advanced API must be used when you want to reuse the same submission logic w
 Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
 
 
+## License
+
+MIT or whatever

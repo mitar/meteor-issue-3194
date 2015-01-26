@@ -22,7 +22,7 @@ $ meteor add jonjamz:forms
 
 ## Examples
 
-### Minimal Usage: Check That It Works
+### Minimal Usage: Check That It Works!
 
 jonjamz:forms comes with two predefined basic components, `basicFormModel` and  `basicInput`, so that you  can quickly see the package in action:
 

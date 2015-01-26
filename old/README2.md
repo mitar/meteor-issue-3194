@@ -136,10 +136,10 @@ Create a form model:
 ```html
 <!-- 
 	Use this template like this:
-		{{#bootstrapModal modalTitle=... schema=... data=... action=...}}
+		{{#bootstrapModal modalId=... modalTitle=... schema=... data=... action=...}}
 -->
 <template name="bootstrapModal">
-    <div class="modal fade">
+    <div class="modal fade" id="{{modalId}}">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form>
@@ -160,7 +160,7 @@ Create a form model:
     </div><!-- /.modal -->
 </template>
 ```
-Notice that the form model must contain the `UI.contentBlock` line with the proper fields, judt copy it as it is.
+Notice that the form model must contain the `UI.contentBlock` line with the proper fields, so just copy it as shown.
 
 Register your form model:
 ```javascript
@@ -170,8 +170,25 @@ JonjamzForms.registerModel({
 });
 ```
 
-Use your modal:
-```javascript
+Create your form:
+```html
+<template name="updateNews">
+    {{#bootstrapModal modalId="updateANews" modalTitle="Update a News" schema=getShema data=currentNews action=getAction}}
+        {{>myInput field="title"}}
+        {{>myInput field="body"}}
+    {{/bootstrapModal}}
+</template>
+```
+
+Use your form:
+```html
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateANews">
+    Update The News
+</button>
+
+<!-- Modal -->
+{{>updateNews currentNews=currentNews}}
 ```
 
 ### Expert Usage: Complex Workflows

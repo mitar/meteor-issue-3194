@@ -14,9 +14,8 @@ $ meteor add jonjamz:forms
 ```
                                                                      
                                                                      
-                                                                     
-                                                                     
-  
+```
+```
 
 #### Comparison with aldeed:autoform
 

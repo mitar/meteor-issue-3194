@@ -122,7 +122,7 @@ Template.newsForm.helpers({
 
 ### Advanced Usage: Define Your Own Form Model
 
-Create a form model (see Bootstrap doc [here](http://getbootstrap.com/javascript/#modals-examples)):
+Create a form model:
 ```html
 <!-- 
 	Use this template like this:

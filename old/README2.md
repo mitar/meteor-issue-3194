@@ -17,9 +17,9 @@ This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple
 ```sh
 $ meteor add jonjamz:forms
 ```
+#### Table of Contents
 
-
-## Introduction
+## Examples
 
 ### Check That It Works
 
@@ -125,7 +125,7 @@ Template.myForm.helpers({
 ```
 
 
-## Advanced USage: Create Your Own Form Models
+### Advanced USage: Create Your Own Form Models
 
 The advanced API must be used when you want to reuse the same submission logic with different forms.
 

@@ -18,7 +18,6 @@ This package uses [aldeed:simple-schema](https://github.com/aldeed/meteor-simple
 $ meteor add jonjamz:forms
 ```
 <br />
-
 ## Introduction
 
 ### Check That It Works

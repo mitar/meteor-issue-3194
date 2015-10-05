@@ -9,22 +9,17 @@ if (Meteor.isClient)
 		{
 		Session.set('dontShow', false);
 
-		Deps.autorun(function()
-			{
-			Meteor.subscribe('myCollection', Session.equals('dontShow', true), function onReady()
-				{
-				// This is where the bug lies: the local collection has not been updated yet
-				console.log('Data as seen from onReady:');
-				console.log( MyCollection.find({}).map(function(o) { return o.value; }) );
+    Tracker.autorun(function (computation) {
+      var handle = Meteor.subscribe('myCollection', Session.equals('dontShow', true));
+      Tracker.autorun(function (computation) {
+        if (!handle.ready()) return;
+        computation.stop();
 
-				// THIS IS A WORKAROUND
-				Meteor.setTimeout(function()
-					{
-					console.log('Data as seen from onReady/setTimeout:');
-					console.log( MyCollection.find({}).map(function(o) { return o.value; }) );
-					}, 0);
-				});
-			});
+        console.log('Data as seen when ready:');
+        console.log( MyCollection.find({}).map(function(o) { return o.value; }) );
+      });
+    });
+
 		});
 
 	Template.main.events(
